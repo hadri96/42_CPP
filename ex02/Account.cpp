@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 17:06:46 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 17:06:46 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/27 17:23:55 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/27 17:24:10 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void Account::makeDeposit(int deposit)
 			  << "amount:" << _amount + deposit << ";"
 			  << "nb_deposits:" << ++_nbDeposits << std::endl;
 	_amount += deposit;
+	_totalAmount += deposit;
 }
 bool Account::makeWithdrawal(int withdrawal)
 {
@@ -121,6 +122,7 @@ bool Account::makeWithdrawal(int withdrawal)
 			  << "amount:" << _amount - withdrawal << ";"
 			  << "nb_withdrawals:" << ++_nbWithdrawals << std::endl;
 	_amount -= withdrawal;
+	_totalAmount -= withdrawal;
 	return (true);
 }
 int Account::checkAmount(void) const
