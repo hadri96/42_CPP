@@ -1,2 +1,2 @@
-# 42_CPP_00
+# 42_CPP
 C++ module of Ecole 42 cursus
