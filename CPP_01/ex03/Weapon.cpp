@@ -6,8 +6,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:53:35 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:53:35 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/28 11:45:23 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/28 11:46:41 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ Weapon::Weapon(std::string t): type(t) {}
 
 Weapon::~Weapon() {}
 
-std::string const Weapon::getType( void ) const
+const std::string &Weapon::getType( void ) const
 {
-	return (this->type);
+	return (type);
 }
 
 void	Weapon::setType(std::string type)

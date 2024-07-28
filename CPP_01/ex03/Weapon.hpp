@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:47:44 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:47:44 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/28 11:44:21 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/28 11:44:21 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Weapon
 
 		~Weapon();
 
-		std::string	const getType( void ) const;
+		std::string	const &getType( void ) const;
 		void		setType(std::string type);
 };
 
