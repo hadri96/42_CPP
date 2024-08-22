@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:51:58 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:51:58 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/28 11:55:22 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/28 11:55:22 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ class HumanA
 {
 	private:
 		std::string	name;
-		Weapon		weapon;
+		Weapon		&weapon;
 	public:
-		HumanA();
-		HumanA(std::string n, Weapon w);
+		HumanA(std::string n, Weapon &w);
 
 		~HumanA();
 

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:51:50 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:51:50 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/28 11:58:56 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/28 11:58:56 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 class HumanB
 {
 private:
-	std::string name;
-	Weapon weapon;
+	std::string	name;
+	Weapon		*weapon;
 
 public:
 	HumanB();
@@ -29,7 +29,7 @@ public:
 
 	~HumanB();
 
-	void	setWeapon(Weapon weapon);
+	void	setWeapon(Weapon &weapon);
 	void	attack(void);
 };
 

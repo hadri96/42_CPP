@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/28 11:58:06 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/28 11:58:36 by hmorand          ###   ########.ch       */
+/*   Created: 2024/07/28 14:54:06 by hmorand           #+#    #+#             */
+/*   Updated: 2024/07/28 14:54:41 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanB.hpp"
+#include "Harl.hpp"
 
-HumanB::HumanB(std::string n) : name(n) {}
 
-HumanB::~HumanB() {}
-
-void	HumanB::setWeapon(Weapon &weapon)
+int	main(int argc, char **argv)
 {
-	this->weapon = &weapon;
-}
+	if (argc != 2)
+	{
+		std::cout << "Wrong number of arguments" << std::endl;
+		return (1);
+	}
+	Harl	harl;
 
-void HumanB::attack(void)
-{
-	std::cout << this->name << " attacks with their "
-			  << weapon->getType() << std::endl;
+	std::string	level(argv[1]);
+
+	harl.complain(level);
 }
