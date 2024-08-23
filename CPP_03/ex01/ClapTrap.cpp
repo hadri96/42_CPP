@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/23 05:43:47 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/23 08:52:20 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/08/23 06:02:36 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "ClapTrap assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment called" << std::endl;
 	if (this != &other)
 	{
 		energy = other.getEnergy();
