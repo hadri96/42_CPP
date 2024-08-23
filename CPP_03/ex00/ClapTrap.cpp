@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 21:08:24 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/22 21:10:37 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/23 05:43:47 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/23 06:02:36 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,36 @@
 
 ClapTrap::ClapTrap()
 {
+	std::cout << "ClapTrap default constructor called" << std::endl;
+	name = "Eric";
 	energy = 10;
 	damage = 0;
 	health = 10;
 }
 
-ClapTrap::ClapTrap(std::string n): name(n) {}
+ClapTrap::ClapTrap(std::string n)
+{
+	std::cout << "ClapTrap  constructor called" << std::endl;
+	energy = 10;
+	damage = 0;
+	health = 10;
+	name = n;
+}
 
 ClapTrap::ClapTrap(ClapTrap &other)
 {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = other;
 }
 
-ClapTrap::~ClapTrap() {}
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap destructor called" << std::endl;
+}
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
+	std::cout << "ClapTrap copy assignment called" << std::endl;
 	if (this != &other)
 	{
 		energy = other.getEnergy();
@@ -58,6 +72,11 @@ std::string  ClapTrap::getName(void) const { return (name); }
 
 void ClapTrap::attack(const std::string &target)
 {
+	if (!energy)
+	{
+		std::cout << "ClapTrap " << name << " can't attack because it has run out of energy" << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap " << name << " attacks" << target
 			  << " causing "<< damage << " points of damage !"
 			  << std::endl;
@@ -66,12 +85,31 @@ void ClapTrap::attack(const std::string &target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
+	if (!health)
+	{
+		std::cout << "ClapTrap " << name
+				  << " can't take anymore damage because it's run out of hit points" << std::endl;
+		return ;
+	}
 	std::cout << "ClapTrap " << name << " takes " << amount
 			  << " points of damage!" << std::endl;
-	health -= amount; }
+	health -= amount;
+}
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (!energy)
+	{
+		std::cout << "ClapTrap " << name
+				  << " can't repair itself because it has run out of energy" << std::endl;
+		return ;
+	}
+	if (!health)
+	{
+		std::cout << "ClapTrap " << name
+				  << " can't repair itself because it has run out of hit points" << std::endl;
+		return;
+	}
 	std::cout << "ClapTrap " << name << " is repaired and gains " << amount
 			  << " points of health back!" << std::endl;
 	health += amount;

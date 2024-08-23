@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 21:07:53 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/22 21:07:53 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/23 06:18:38 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/23 06:18:38 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
