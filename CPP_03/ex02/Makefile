@@ -1,4 +1,4 @@
-NAME= 			scav
+NAME= 			frag
 
 CC = 			c++
 
@@ -15,7 +15,7 @@ CFLAGS = 		-Wall -Wextra -Werror -std=c++98
 
 SRCS = 			main \
 				ClapTrap \
-				ScavTrap
+				FragTrap
 
 FILES =			$(SRCS:%=%.cpp)
 

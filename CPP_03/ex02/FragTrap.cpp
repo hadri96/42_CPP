@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 14:18:28 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/23 14:22:22 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/24 14:59:42 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/24 14:59:42 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,56 @@ FragTrap &FragTrap::operator=(FragTrap &other)
 	if (this != &other)
 		ClapTrap::operator=(other);
 	std::cout << "FragTrap assignment operator called" << std::endl;
+	return (*this);
 }
 
 void FragTrap::highFivesGuys( void )
 {
 	std::cout << "FragTrap " << name << " requests a HighFive!✋" << std::endl;
+}
+
+void FragTrap::attack(const std::string &target)
+{
+	if (!energy)
+	{
+		std::cout << "FragTrap " << name << " can't attack because it has run out of energy" << std::endl;
+		return;
+	}
+	std::cout << "FragTrap " << name << " attacks " << target
+			  << " causing " << damage << " points of damage !"
+			  << std::endl;
+	energy--;
+}
+
+void FragTrap::takeDamage(unsigned int amount)
+{
+	if (!health)
+	{
+		std::cout << "FragTrap " << name
+				  << " can't take anymore damage because it's run out of hit points" << std::endl;
+		return;
+	}
+	std::cout << "FragTrap " << name << " takes " << amount
+			  << " points of damage!" << std::endl;
+	health -= amount;
+}
+
+void FragTrap::beRepaired(unsigned int amount)
+{
+	if (!energy)
+	{
+		std::cout << "FragTrap " << name
+				  << " can't repair itself because it has run out of energy" << std::endl;
+		return;
+	}
+	if (!health)
+	{
+		std::cout << "FragTrap " << name
+				  << " can't repair itself because it has run out of hit points" << std::endl;
+		return;
+	}
+	std::cout << "FragTrap " << name << " is repaired and gains " << amount
+			  << " points of health back!" << std::endl;
+	health += amount;
+	energy--;
 }
