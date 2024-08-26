@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 18:50:29 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/24 18:50:29 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/26 18:40:59 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/26 18:41:04 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ Animal::Animal(std::string t)
 	std::cout << "Animal parameterized constructor called" << std::endl;
 	type = t;
 }
-Animal::Animal(Animal &other)
+Animal::Animal(Animal &other): type(other.type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
-	*this = other;
 }
 Animal &Animal::operator=(Animal &other)
 {

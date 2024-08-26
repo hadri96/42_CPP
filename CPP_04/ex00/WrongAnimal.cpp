@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/25 18:27:08 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/25 18:27:08 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/26 18:41:25 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/26 18:41:42 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ WrongAnimal::WrongAnimal(std::string t)
 	std::cout << "WrongAnimal parameterized constructor called" << std::endl;
 	type = t;
 }
-WrongAnimal::WrongAnimal(WrongAnimal &other)
+WrongAnimal::WrongAnimal(WrongAnimal &other): type(other.type)
 {
 	std::cout << "WrongAnimal copy constructor called" << std::endl;
-	*this = other;
 }
 WrongAnimal &WrongAnimal::operator=(WrongAnimal &other)
 {

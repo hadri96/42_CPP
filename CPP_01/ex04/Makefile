@@ -9,6 +9,7 @@ BLUE =			\033[0;34m
 MAGENTA =		\033[0;35m
 CYAN =			\033[0;36m
 WHITE =			\033[0;37m
+BW =			\033[1;37m
 RESET =			\033[0m
 
 CFLAGS = 		-Wall -Wextra -Werror -std=c++98
@@ -30,6 +31,7 @@ all:	$(NAME)
 $(NAME):	$(OBJS)
 	@$(CC) $(CFLAGS) -o $@ $(FILES)
 	@echo "$(GREEN) ✅ Compilation done! ✅$(RESET)"
+	@echo "$(GREEN) ⚙️ Executable: $(BW)./$(NAME)$(RESET)"
 
 clean:
 	rm -rf objs
