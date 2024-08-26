@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 16:46:32 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/22 16:51:13 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/08/26 18:29:54 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed(): value(0) {}
 
-Fixed::Fixed(Fixed const &other) { *this = other; }
+Fixed::Fixed(Fixed const &other): value(other.value) {}
 
 Fixed::Fixed(const int int_value): value(int_value << bits) {}
 
