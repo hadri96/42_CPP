@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 15:24:26 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 15:24:26 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/27 15:03:40 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/27 15:03:40 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <iostream>
 # include <string>
 # include <cctype>
+# include <cstdlib>
 # include "Contact.hpp"
 
 class	PhoneBook

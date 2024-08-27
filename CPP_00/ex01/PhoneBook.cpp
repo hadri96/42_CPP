@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 15:25:41 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 15:37:50 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/27 15:03:55 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/27 15:03:55 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	PhoneBook::search() const
 	std::getline(std::cin, index);
 	if (std::cin.eof())
 		return;
-	while (index.empty() || index.size() > 1 || !std::isdigit(index[0]) || std::stoi(index) > size - 1 || std::stoi(index) < -1)
+	while (index.empty() || index.size() > 1 || !std::isdigit(index[0]) || atoi(index.c_str()) > size - 1 || atoi(index.c_str()) < -1)
 	{
 		std::cout << "Invalid index, please enter a valid choice!" << std::endl;
 		std::cout << "Please enter the index of the relevant contact: ";
@@ -61,7 +61,7 @@ void	PhoneBook::search() const
 		if (std::cin.eof())
 			return;
 	}
-	contacts[std::stoi(index)].display();
+	contacts[atoi(index.c_str())].display();
 }
 
 void	PhoneBook::add_contact()

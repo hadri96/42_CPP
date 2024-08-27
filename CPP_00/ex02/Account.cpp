@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 17:23:55 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 17:24:10 by hmorand          ###   ########.ch       */
+/*   Created: 2024/08/27 15:11:46 by hmorand           #+#    #+#             */
+/*   Updated: 2024/08/27 15:24:04 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
-#include <chrono>
 #include <ctime>
 #include <iomanip>
 
@@ -23,14 +22,21 @@ int Account::_totalNbWithdrawals = 0;
 
 void Account::_displayTimestamp(void)
 {
-	std::chrono::system_clock::time_point	now;
-	std::time_t								now_time;
-	std::tm 								*local_time;
+	std::time_t now_time;
+	std::tm *local_time;
 
-	now = std::chrono::system_clock::now();
-	now_time = std::chrono::system_clock::to_time_t(now);
+	now_time = std::time(NULL);
 	local_time = std::localtime(&now_time);
-	std::cout << std::put_time(local_time, "[%Y%m%d_%H%M%S] ");
+
+	std::cout << '['
+			  << (local_time->tm_year + 1900)
+			  << std::setw(2) << std::setfill('0') << (local_time->tm_mon + 1)
+			  << std::setw(2) << std::setfill('0') << local_time->tm_mday
+			  << '_'
+			  << std::setw(2) << std::setfill('0') << local_time->tm_hour
+			  << std::setw(2) << std::setfill('0') << local_time->tm_min
+			  << std::setw(2) << std::setfill('0') << local_time->tm_sec
+			  << "] ";
 }
 
 Account::Account() {}

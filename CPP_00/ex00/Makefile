@@ -25,11 +25,13 @@ NAME = 			megaphone
 all:	$(NAME)
 
 $(NAME):	$(CPPFILES)
-	$(CC) $(CFLAGS) -o $(NAME) $(CPPFILES)
+	@$(CC) $(CFLAGS) -o $(NAME) $(CPPFILES)
 	@echo "$(GREEN)✅ Compilation done! ✅$(RESET)"
 	@echo "$(GREEN) ⚙️ Executable: $(BW)./$(NAME)$(RESET)"
 
 clean:
-	rm -f $(NAME)
+	@rm -f $(NAME)
 
-.PHONY: all clean
+re:		clean all
+
+.PHONY: all clean re

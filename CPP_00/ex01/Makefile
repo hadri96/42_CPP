@@ -36,11 +36,13 @@ $(NAME):	$(OBJS)
 	@echo "$(GREEN) ⚙️ Executable: $(BW)./$(NAME)$(RESET)"
 
 clean:
-	rm -rf objs
+	@rm -rf objs
 	@echo "$(RED) 🗑️ Object files deleted! 🗑️$(RESET)"
 
 fclean:		clean
-	rm $(NAME)
+	@rm $(NAME)
 	@echo "$(RED) 🗑️ Executable deleted! 🗑️$(RESET)"
+
+re:			fclean all
 
 .PHONY: all clean fclean
