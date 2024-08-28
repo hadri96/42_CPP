@@ -1,4 +1,4 @@
-NAME= 			BraiiiiiiinnnzzzZ
+NAME= 			harlFilter
 
 CC = 			c++
 
@@ -14,7 +14,7 @@ RESET =			\033[0m
 
 CFLAGS = 		-Wall -Wextra -Werror -std=c++98
 
-SRCS = 			Zombie \
+SRCS = 			Harl \
 				main
 
 FILES =			$(SRCS:%=%.cpp)
@@ -42,4 +42,7 @@ fclean:		clean
 	@rm $(NAME)
 	@echo "$(RED) 🗑️ Executable deleted! 🗑️$(RESET)"
 
-.PHONY: all clean fclean
+
+re:			fclean all
+
+.PHONY: all clean fclean re
