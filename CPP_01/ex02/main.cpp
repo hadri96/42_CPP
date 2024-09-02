@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:19:07 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:19:07 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/02 13:58:32 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/02 13:58:32 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(void)
 
 	std::cout << "Value of string variable: " << str << std::endl;
 	std::cout << "Value of pointer variable: " << *stringPTR << std::endl;
-	std::cout << "Value of string variable: " << stringREF << std::endl;
+	std::cout << "Value of reference variable: " << stringREF << std::endl;
 
 	return 0;
 }

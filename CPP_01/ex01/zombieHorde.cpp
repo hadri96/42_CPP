@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/27 20:07:43 by hmorand           #+#    #+#             */
-/*   Updated: 2024/07/27 20:07:43 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/02 13:57:07 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/02 13:57:07 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie	*zombieHorde(int N, std::string name)
 
 	horde = new (std::nothrow) Zombie[N];
 	if (!horde)
-		return (nullptr);
+		return (NULL);
 	for (int i = 0; i < N; i++)
 		new (&horde[i]) Zombie(name);
 	return (horde);

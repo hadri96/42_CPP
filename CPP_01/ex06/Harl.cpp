@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 10:26:40 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/28 10:27:14 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/09/02 14:13:00 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,32 @@ void	Harl::complain( std::string name )
 	}
 	switch (i)
 	{
-		case 0:
+		case (0):
+		{
 			debug();
-		case 1:
 			info();
-		case 2:
 			warning();
-		case 3:
 			error();
 			break ;
+		}
+		case (1):
+		{
+			info();
+			warning();
+			error();
+			break ;
+		}
+		case (2):
+		{
+			warning();
+			error();
+			break ;
+		}
+		case (3):
+		{
+			error();
+			break ;
+		}
 		default:
 			undefined();
 
