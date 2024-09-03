@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 09:35:19 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/26 18:27:40 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/02 16:24:25 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/02 16:26:39 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ Fixed::Fixed()
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed const &other): value(other.value)
+Fixed::Fixed(Fixed const &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
+	*this = other;
 }
 
 Fixed::~Fixed()

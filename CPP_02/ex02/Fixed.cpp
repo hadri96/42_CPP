@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 16:46:32 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/26 18:29:54 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 12:01:51 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 12:02:08 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Fixed::Fixed(): value(0) {}
 
-Fixed::Fixed(Fixed const &other): value(other.value) {}
+Fixed::Fixed(Fixed const &other): value(other.getRawBits()) {}
 
 Fixed::Fixed(const int int_value): value(int_value << bits) {}
 
@@ -67,6 +67,19 @@ Fixed Fixed::operator++(int)
 {
 	Fixed temp = *this;
 	++(*this);
+	return (temp);
+}
+
+Fixed &Fixed::operator--()
+{
+	--value;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--(*this);
 	return (temp);
 }
 

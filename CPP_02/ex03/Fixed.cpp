@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 16:13:35 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/26 18:30:11 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/09/03 12:02:25 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,19 @@ Fixed Fixed::operator++(int)
 {
 	Fixed temp = *this;
 	++(*this);
+	return (temp);
+}
+
+Fixed &Fixed::operator--()
+{
+	--value;
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed temp = *this;
+	--(*this);
 	return (temp);
 }
 

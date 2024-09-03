@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 17:04:48 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/22 17:04:48 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/02 16:33:40 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/02 16:33:40 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		Fixed &operator=(const Fixed &other);
 		Fixed &operator=(const Fixed &other);
 
 		Fixed operator+(const Fixed &other) const;

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/22 15:47:26 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/22 15:48:01 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/02 16:30:01 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/02 16:30:01 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Fixed
 		float toFloat(void) const;
 		int toInt(void) const;
 
-		Fixed &operator=(const Fixed &other) const;
+		Fixed &operator=(const Fixed &other);
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &value);
