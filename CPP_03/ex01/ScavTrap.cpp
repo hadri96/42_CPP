@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 09:47:49 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/03 09:47:49 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 12:07:52 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 12:07:52 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,38 +64,5 @@ void ScavTrap::attack(const std::string &target)
 	std::cout << "ScavTrap " << name << " attacks " << target
 			  << " causing " << damage << " points of damage !"
 			  << std::endl;
-	energy--;
-}
-
-void ScavTrap::takeDamage(unsigned int amount)
-{
-	if (!health)
-	{
-		std::cout << "ScavTrap " << name
-				  << " can't take anymore damage because it's run out of hit points" << std::endl;
-		return;
-	}
-	std::cout << "ScavTrap " << name << " takes " << amount
-			  << " points of damage!" << std::endl;
-	health -= amount;
-}
-
-void ScavTrap::beRepaired(unsigned int amount)
-{
-	if (!energy)
-	{
-		std::cout << "ScavTrap " << name
-				  << " can't repair itself because it has run out of energy" << std::endl;
-		return;
-	}
-	if (!health)
-	{
-		std::cout << "ScavTrap " << name
-				  << " can't repair itself because it has run out of hit points" << std::endl;
-		return;
-	}
-	std::cout << "ScavTrap " << name << " is repaired and gains " << amount
-			  << " points of health back!" << std::endl;
-	health += amount;
 	energy--;
 }

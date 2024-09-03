@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 09:48:28 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/03 09:48:28 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 12:08:05 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 12:08:12 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "ClapTrap.hpp"
 
-class FragTrap: ClapTrap
+class FragTrap: public ClapTrap
 {
 	public:
 		FragTrap();
@@ -27,8 +27,6 @@ class FragTrap: ClapTrap
 
 		void highFivesGuys(void);
 		void attack(const std::string &target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
 };
 
 #endif
