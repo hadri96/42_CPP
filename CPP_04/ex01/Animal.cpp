@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 15:59:52 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/31 16:05:01 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/09/03 13:26:06 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Animal::Animal()
 	type = "Mammal";
 }
 
-Animal::Animal(std::string t): type(t), brain(new Brain)
+Animal::Animal(std::string t): type(t)
 {
 	std::cout << "Animal parameterized constructor called" << std::endl;
 }
-Animal::Animal(Animal &other): type(other.type), brain(new Brain(*other.brain))
+Animal::Animal(Animal &other): type(other.type)
 {
 	std::cout << "Animal copy constructor called" << std::endl;
 }
@@ -30,16 +30,12 @@ Animal &Animal::operator=(Animal &other)
 {
 	std::cout << "Animal copy assignment operator called" << std::endl;
 	if (this != &other)
-	{
 		type = other.getType();
-		brain = new Brain(*other.brain);
-	}
 	return (*this);
 }
 
 Animal::~Animal()
 {
-	delete brain;
 	std::cout << "Animal destructor called" << std::endl;
 }
 void Animal::makeSound( void ) const
