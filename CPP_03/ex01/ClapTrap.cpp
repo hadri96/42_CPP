@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/26 18:34:12 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/26 18:37:03 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 09:45:38 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 09:49:55 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string n)
 {
-	std::cout << "ClapTrap  constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 	energy = 10;
 	damage = 0;
 	health = 10;
@@ -43,7 +43,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-	std::cout << "ClapTrap copy assignment called" << std::endl;
+	std::cout << "ClapTrap assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		energy = other.energy;

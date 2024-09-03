@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 14:56:27 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/24 14:56:27 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 09:48:28 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 09:48:28 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class FragTrap: ClapTrap
 		FragTrap(FragTrap &other);
 		~FragTrap();
 
-		FragTrap &operator=(FragTrap &other);
+		FragTrap &operator=(const FragTrap &other);
 
 		void highFivesGuys(void);
 		void attack(const std::string &target);

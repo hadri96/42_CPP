@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 08:58:23 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/23 08:58:23 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 09:47:20 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 09:47:29 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class ScavTrap: public ClapTrap
 		ScavTrap(ScavTrap &other);
 		~ScavTrap();
 
-		ScavTrap &operator=(ScavTrap &other);
+		ScavTrap &operator=(const ScavTrap &other);
 
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);

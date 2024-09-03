@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/23 08:59:49 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/23 10:05:49 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 09:47:49 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 09:47:49 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,15 @@ ScavTrap::ScavTrap(ScavTrap &other): ClapTrap(other)
 	*this = other;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap &other)
+ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 {
-	if (this == &other)
+	std::cout << "ScavTrap assignment operator called" << std::endl;
+	if (this != &other)
+	{
 		ClapTrap::operator=(other);
-	std::cout << "ScavTrap assignement operator called" << std::endl;
+	}
 	return (*this);
 }
-
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/26 18:31:54 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/26 18:36:45 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/09/03 09:50:07 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string n)
 {
-	std::cout << "ClapTrap  constructor called" << std::endl;
+	std::cout << "ClapTrap constructor called" << std::endl;
 	energy = 10;
 	damage = 0;
 	health = 10;

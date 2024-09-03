@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/24 14:59:42 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/24 14:59:42 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/03 09:48:36 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/03 09:48:36 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called" << std::endl;
 }
 
-FragTrap &FragTrap::operator=(FragTrap &other)
+FragTrap &FragTrap::operator=(const FragTrap &other)
 {
 	if (this != &other)
 		ClapTrap::operator=(other);
