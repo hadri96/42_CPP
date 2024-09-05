@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 16:23:54 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/31 16:23:54 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/05 15:45:00 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/05 15:45:00 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 class Cat: public AAnimal
 {
+	private:
+		Brain		*brain;
 	public:
 		Cat();
 		Cat(Cat &other);

@@ -6,7 +6,7 @@
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/31 16:24:11 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/31 16:24:11 by hmorand          ###   ########.ch       */
+/*   Updated: 2024/09/05 15:43:27 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,36 @@
 
 AAnimal::AAnimal()
 {
-	std::cout << "Animal default constructor called" << std::endl;
+	std::cout << "AAnimal default constructor called" << std::endl;
 	type = "Mammal";
 }
 
-AAnimal::AAnimal(std::string t): type(t), brain(new Brain)
+AAnimal::AAnimal(std::string t): type(t)
 {
-	std::cout << "Animal parameterized constructor called" << std::endl;
+	std::cout << "AAnimal parameterized constructor called" << std::endl;
 }
-AAnimal::AAnimal(AAnimal &other): type(other.type), brain(new Brain(*other.brain))
+AAnimal::AAnimal(AAnimal &other): type(other.type)
 {
-	std::cout << "Animal copy constructor called" << std::endl;
+	std::cout << "AAnimal copy constructor called" << std::endl;
 }
 AAnimal &AAnimal::operator=(AAnimal &other)
 {
-	std::cout << "Animal copy assignment operator called" << std::endl;
+	std::cout << "AAnimal copy assignment operator called" << std::endl;
 	if (this != &other)
-	{
 		type = other.getType();
-		brain = new Brain(*other.brain);
-	}
 	return (*this);
 }
 
 AAnimal::~AAnimal()
 {
-	delete brain;
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "AAnimal destructor called" << std::endl;
 }
 void AAnimal::makeSound( void ) const
 {
-	std::cout << "Animal " << type << " blobs" << std::endl;
+	std::cout << "AAnimal " << type << " blobs" << std::endl;
 }
 
 std::string AAnimal::getType(void) const { return (type) ;}
 
 void AAnimal::setType(std::string t) { type = t; }
+

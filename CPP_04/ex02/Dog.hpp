@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/31 16:23:35 by hmorand           #+#    #+#             */
-/*   Updated: 2024/08/31 16:23:35 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/05 15:45:08 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/05 15:45:13 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 class Dog : public AAnimal
 {
-public:
-	Dog();
-	Dog(Dog &other);
-	Dog &operator=(Dog &other);
-	~Dog();
+	private:
+		Brain		*brain;
+	public:
+		Dog();
+		Dog(Dog &other);
+		Dog &operator=(Dog &other);
+		~Dog();
 
-	void makeSound(void) const;
+		void makeSound(void) const;
 };
 
 #endif
