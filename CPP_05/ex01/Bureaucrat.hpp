@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/10 16:08:21 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/14 17:30:10 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/14 17:29:57 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/14 17:30:03 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -30,11 +33,12 @@ class Bureaucrat
 		Bureaucrat &operator=(Bureaucrat &other);
 		~Bureaucrat();
 
-		const std::string getName( void ) const;
-		int			getGrade( void ) const;
+		const std::string	getName( void ) const;
+		int					getGrade( void ) const;
 
 		void	increment( void );
 		void	decrement( void );
+		void	signForm(Form &f);
 
 		class GradeTooHighException: public std::exception
 		{

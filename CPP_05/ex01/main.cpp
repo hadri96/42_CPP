@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 16:50:05 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/14 16:50:11 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/14 17:25:38 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/14 17:27:44 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(void)
 {
 	Bureaucrat bureaucrat1("John", 5);
-	std::cout << bureaucrat1;
+	std::cout << bureaucrat1 << std::endl;
 
 	try
 	{
@@ -27,35 +27,46 @@ int main(void)
 		std::cout << "Error creating Bureaucrat: " << e.what() << std::endl;
 	}
 	Bureaucrat bureaucrat3("Bob", 10);
-	std::cout << bureaucrat3;
-	bureaucrat3.increment();
-	std::cout << bureaucrat3 << "Grade incremented successfully!" << std::endl;
-	bureaucrat3.decrement();
-	std::cout << bureaucrat3 << "Grade decremented successfully!" << std::endl;
+	std::cout << bureaucrat3 << std::endl;
+	Form form1("Boring", 10, 20);
+	std::cout << form1 << std::endl;
+	bureaucrat3.signForm(form1);
+	try
+	{
+		bureaucrat3.signForm(form1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	Form form2("More boring", 5, 5);
+	std::cout << form2 << std::endl;
+	try
+	{
+		bureaucrat3.signForm(form2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 
 	try
 	{
-		Bureaucrat bureaucrat4("Eve", 1);
-		bureaucrat4.increment();
-		std::cout << bureaucrat4 << "Grade incremented successfully!" << std::endl;
+		Form form3("Dead", 0, 1);
 	}
-	catch (const Bureaucrat::GradeTooHighException& e)
+	catch(const std::exception& e)
 	{
-		std::cout << "Error incrementing grade: " << e.what() << std::endl;
+		std::cerr << "Form can't be created because "<< e.what() << '\n';
 	}
 
 	try
 	{
-		Bureaucrat bureaucrat5("Adam", 150);
-		bureaucrat5.decrement();
-		std::cout << bureaucrat5 << "Grade decremented successfully!" << std::endl;
+		Form form3("Dead", 151, 1);
 	}
-	catch (const Bureaucrat::GradeTooLowException& e)
+	catch (const std::exception &e)
 	{
-		std::cout << "Error decrementing grade: " << e.what() << std::endl;
+		std::cerr << "Form can't be created because " << e.what() << '\n';
 	}
-	Bureaucrat bureaucrat6("Original", 42);
-	Bureaucrat bureaucrat7 = bureaucrat6;
-	std::cout << bureaucrat7;
+
 	return (0);
 }

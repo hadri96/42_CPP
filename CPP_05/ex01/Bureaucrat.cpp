@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/14 16:49:28 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/14 16:49:35 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/14 17:29:12 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/14 17:29:45 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,10 @@ Bureaucrat::Bureaucrat(Bureaucrat &other): grade(other.grade), name(other.name) 
 Bureaucrat &Bureaucrat::operator=(Bureaucrat &other)
 {
 	if (this != &other)
-		grade = other.grade;
+	{
+		Bureaucrat temp(other);
+		std::swap(grade, temp.grade);
+	}
 	return (*this);
 }
 
@@ -59,6 +62,23 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &value)
 {
-	out << value.getName() << ", bureaucrat grade " << value.getGrade() << ".\n";
+	out << value.getName() << ", bureaucrat grade " << value.getGrade();
 	return out;
+}
+
+void	Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+		std::cout << *this << " signed " << f << std::endl;
+	}
+	catch (const Form::AlreadySignedException &e)
+	{
+		std::cout << f << " can't be signed because " << e.what() << std::endl;
+	}
+	catch (const Form::GradeTooLowException &e)
+	{
+		std::cout << *this << " couldn't sign " << f << " because its grade is too low." << std::endl;
+	}
 }
