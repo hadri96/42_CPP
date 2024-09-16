@@ -1,17 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   settings.json                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 15:50:06 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/16 15:50:15 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/16 19:19:59 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/16 19:20:19 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
-#include "regex.h"
+
+bool	is_number(char * string)
+{
+	int		i = 0, dot = 0;
+	double	num;
+
+	num = std::atof(string);
+	if (num != 0)
+		return (true);
+	while (string[i] && (string[i] == '0' || string[i] == '.'))
+	{
+		if (string[i] == '.')
+			dot++;
+		i++;
+	}
+	if (dot < 2 && (!string[i] || (string[i] == 'f' && !string[i + 1])))
+		return (true);
+	return (false);
+}
 
 int main(int argc, char **argv)
 {
@@ -20,9 +38,6 @@ int main(int argc, char **argv)
 		std::cout << "Wrong number of parameters!" << std::endl;
 		return (1);
 	}
-
-	std::cout << std::atof(argv[1]) << std::endl;
-
-	std::cout <<  std::atoi(argv[1]) << std::endl;
+	ScalarConverter::convert(argv[1]);
 	return (0);
 }

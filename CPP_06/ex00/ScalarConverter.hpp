@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 15:49:22 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/16 15:49:22 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/16 19:44:49 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/16 19:44:49 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,20 @@
 
 # include <iostream>
 # include <cstdlib>
+# include <cfloat>
+# include <iomanip>
+
+bool	is_number(char *string);
 
 class ScalarConverter
 {
 	private:
-
-	public:
 		ScalarConverter();
 		ScalarConverter(ScalarConverter &other);
 		ScalarConverter &operator=(ScalarConverter &other);
 		~ScalarConverter();
-
-		void	convert( std::string value );
+	public:
+		static void	convert(char *value);
 };
 
 #endif
