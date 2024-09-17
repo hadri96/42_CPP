@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScalarConverter.hpp                                :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 12:03:02 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/17 12:03:04 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/17 13:14:15 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/17 13:14:22 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
+# include <stdint.h>
 # include <iostream>
-# include <cstdlib>
-# include <cfloat>
-# include <limits.h>
-# include <iomanip>
 
-bool	is_number(char *string);
+typedef struct s_data
+{
+	void *data;
+}	Data;
 
-class ScalarConverter
+class Serializer
 {
 	private:
-		ScalarConverter();
-		ScalarConverter(ScalarConverter &other);
-		ScalarConverter &operator=(ScalarConverter &other);
-		~ScalarConverter();
+		Serializer();
+		Serializer(Serializer &other);
+		Serializer &operator=(Serializer &other);
+		~Serializer();
+
 	public:
-		static void	convert(char *value);
+		static uintptr_t serialize(Data* ptr);
+		static Data *deserialize(uintptr_t raw);
 };
 
 #endif
