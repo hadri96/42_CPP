@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   settings.json                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 18:03:40 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/22 18:04:06 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/23 10:25:10 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/23 10:25:15 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "iter.hpp"
 
-template <typename T> void print(T elem)
+template <typename T> void print(T ele)
 {
-	std::cout << elem << std::endl;
+	std::cout << ele << std::endl;
 }
 
 int main(void)
