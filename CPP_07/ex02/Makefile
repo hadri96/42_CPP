@@ -1,4 +1,4 @@
-NAME= 			iter
+NAME= 			array
 
 CC = 			c++
 
@@ -12,7 +12,7 @@ CYAN =			\033[0;36m
 WHITE =			\033[0;37m
 RESET =			\033[0m
 
-CFLAGS = 		-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CFLAGS = 		-Wall -Wextra -Werror -std=c++98 #-g3 -fsanitize=address
 
 SRCS = 			main
 
