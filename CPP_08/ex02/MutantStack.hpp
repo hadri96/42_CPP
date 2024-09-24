@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 16:43:40 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/23 16:49:40 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/24 16:40:41 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/24 16:45:49 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,14 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 	public:
-		class iterator
-		{
-			private:
-				typename std::stack<T>::container_type::iterator it;
-
-			public:
-				iterator(typename std::stack<T>::container_type::iterator it) : it(it) {}
-				iterator(const iterator& other) : it(other.it) {}
-
-				T& operator*() const { return *it; }
-
-				iterator& operator++()
-				{
-					++it;
-					return *this;
-				}
-				iterator operator++(int)
-				{
-					iterator temp = *this;
-					++(*this);
-					return temp;
-				}
-
-				iterator& operator--()
-				{
-					--it;
-					return *this;
-				}
-				iterator operator--(int) { iterator temp = *this; --(*this); return temp; }
-
-				bool operator==(const iterator& other) const { return it == other.it; }
-				bool operator!=(const iterator& other) const { return it != other.it; }
-		};
+		typedef typename std::stack<T>::container_type::iterator	iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
 		iterator begin() { return iterator(this->c.begin()); }
 		iterator end() { return iterator(this->c.end()); }
+		iterator begin() const { return iterator(this->c.begin()); }
+		iterator end() const { return iterator(this->c.end()); }
+
 };
 
 #endif
