@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 17:42:23 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/25 17:42:29 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/25 18:01:37 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/25 18:07:39 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,16 @@ void	BitcoinExchange::convert(std::string filename)
 }
 
 BitcoinExchange::~BitcoinExchange() { }
+
+BitcoinExchange::BitcoinExchange(BitcoinExchange &other): values(std::map<t_date, double>(other.values))
+{}
+BitcoinExchange &BitcoinExchange::operator=(BitcoinExchange &other)
+{
+	if (this != &other)
+		values = other.values;
+	return (*this);
+
+}
 
 const char *BitcoinExchange::FileException::what() const throw()
 {
