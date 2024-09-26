@@ -39,6 +39,9 @@ clean:
 
 fclean:		clean
 	@rm $(NAME)
+	@if [ -d $(NAME).dSYM ]; then\
+		rm -rf $(NAME).d*;\
+	fi
 	@echo "$(RED) 🗑️ Executable deleted! 🗑️$(RESET)"
 
 
