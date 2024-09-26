@@ -1,4 +1,4 @@
-NAME= 			btc
+NAME= 			PmergeMe
 
 CC = 			c++
 
@@ -15,7 +15,7 @@ RESET =			\033[0m
 CFLAGS = 		-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 SRCS = 			main \
-				BitcoinExchange
+				PmergeMe
 
 FILES =			$(SRCS:%=%.cpp)
 
