@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/16 19:37:52 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/16 19:44:08 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/26 11:32:59 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/26 11:32:59 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ScalarConverter::convert(char *value)
 	if (converted == static_cast <int> (converted))
 		std::cout << std::fixed << std::setprecision(1);
 	if (is_num && (converted < FLT_MIN || converted > FLT_MAX))
-		std::cout << "int : impossible" << std::endl;
+		std::cout << "float : impossible" << std::endl;
 	else
 		std::cout << "float : " << static_cast<float>(converted) << "f" << std::endl;
 	if (!is_num)
