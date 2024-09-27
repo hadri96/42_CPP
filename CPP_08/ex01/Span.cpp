@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 14:41:49 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/23 14:42:55 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/27 16:38:25 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/27 16:38:28 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,6 @@ int		Span::longestSpan( void )
 	if (contains < 2)
 		throw NoNumberError();
 	int max = *(values.end() - 1) - *(values.begin());
-	for (std::vector<int>::iterator it = values.begin(); it != values.end() - 1; ++it)
-	{
-		if (*(it + 1) - *it > max)
-			max = *(it + 1) - *it;
-	}
 	return (max);
 }
 
