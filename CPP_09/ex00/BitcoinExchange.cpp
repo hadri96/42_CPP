@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 18:01:37 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/25 18:07:39 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/27 13:12:25 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/27 13:17:36 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,12 +90,12 @@ void	BitcoinExchange::load_file( std::string f )
 
 	if (f == "data.csv")
 	{
-		this->db = std::ifstream("data.csv");
+		this->db.open("data.csv");
 		check = &this->db;
 	}
 	else
 	{
-		this->file = std::ifstream(f);
+		this->file.open(f);
 		check = &this->file;
 	}
 	if (!check->good())
@@ -137,7 +137,7 @@ double	BitcoinExchange::parse_line(std::ifstream &f, std::string sep, t_date *da
 		is_date(date_string, &date->date);
 		date->date_string = date_string;
 		valid_date(*date);
-		double number = std::stod(num);
+		double number = std::atof(num.c_str());
 		if (number > limit || number < 0)
 			throw InvalidAmount(num);
 		return (number);
