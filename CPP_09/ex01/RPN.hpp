@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 22:47:29 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/25 22:47:38 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/27 17:43:13 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/27 17:43:23 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,12 @@ class RPN
 		};
 
 		class InvalidFirstElementsException : public std::exception
+		{
+		public:
+			const char *what() const throw();
+		};
+
+		class InvalidNumberException : public std::exception
 		{
 		public:
 			const char *what() const throw();

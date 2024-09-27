@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 23:00:14 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/25 23:05:13 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/27 17:43:30 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/27 17:44:31 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ bool	is_number(std::string str)
 		if (!std::isdigit(str[i]))
 			return (false);
 	}
+	if (std::atoi(str.c_str()) > 9)
+		throw RPN::InvalidNumberException();
 	return (true);
 }
 
@@ -177,6 +179,11 @@ const char* RPN::MismatchOperatorsNumbersException::what() const throw()
 const char *RPN::InvalidFirstElementsException::what() const throw()
 {
 	return "First two elements must be numbers";
+}
+
+const char *RPN::InvalidNumberException::what() const throw()
+{
+	return "Numbers can only be between 0 and 10";
 }
 
 RPN::InvalidCharacterException::InvalidCharacterException(char c) : ch(c) {}

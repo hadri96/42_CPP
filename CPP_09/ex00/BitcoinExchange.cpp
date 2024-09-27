@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 13:12:25 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/27 13:17:36 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/27 17:41:34 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/27 17:41:38 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,7 +228,7 @@ void	BitcoinExchange::convert(std::string filename)
 				throw DateOutOfRange(date.date_string);
 			else
 				std::cout << date.date_string << " => " << value << " = "
-				<< value * values.lower_bound(date)->second << std::endl;
+				<< value * (--values.lower_bound(date))->second << std::endl;
 		}
 		catch (const EndOfFileException &e)
 		{
