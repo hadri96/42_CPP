@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 17:43:30 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/27 17:44:31 by hmorand          ###   ########.ch       */
+/*   Created: 2024/09/30 11:56:15 by hmorand           #+#    #+#             */
+/*   Updated: 2024/09/30 12:02:03 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ bool	is_op(std::string str)
 
 int	RPN::count_numbers(std::string args)
 {
-	int	count  = 0;
+	int	count = 0;
 
 	for (unsigned long i = 0; i < args.length(); i++)
 	{
@@ -61,11 +61,12 @@ int	RPN::count_numbers(std::string args)
 		if (std::isdigit(args[i]))
 		{
 			count++;
-			while (args[i + 1] && std::isdigit(args[i + 1]))
+			if (args[i + 1] && std::isdigit(args[i + 1]))
 			{
-				i++;
+				throw InvalidNumberException();
 			}
 		}
+
 	}
 	return (count);
 }
@@ -128,8 +129,6 @@ int	RPN::sum( void )
 	{
 		if (is_number(elem))
 			numbers.push(std::atoi(elem.c_str()));
-		else
-			throw InvalidFirstElementsException();
 	}
 	while (input.find(' ') != std::string::npos || input[0])
 	{
@@ -143,7 +142,7 @@ int	RPN::sum( void )
 			elem = input.substr(0, next_space);
 			input = input.substr(next_space + 1, input.length() - 1);
 		}
-		if (is_number(elem))
+		if (is_number(elem) && elem.length() == 1)
 			numbers.push(std::atoi(elem.c_str()));
 		else if (is_op(elem))
 		{
