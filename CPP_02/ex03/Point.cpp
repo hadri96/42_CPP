@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 12:03:10 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/03 12:03:59 by hmorand          ###   ########.ch       */
+/*   Created: 2024/10/04 15:26:11 by hmorand           #+#    #+#             */
+/*   Updated: 2024/10/04 15:26:15 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,8 @@ const Fixed Point::getX(void) const { return (x); }
 
 const Fixed Point::getY(void) const { return (y); }
 
-void	Point::setX(Fixed value) { x = value; }
-
-void	Point::setY(Fixed value) { y = value; }
-
 Point &Point::operator=(const Point &other)
 {
-	if (this != &other)
-	{
-		x = other.getX();
-		y = other.getY();
-	}
+	(void) other;
 	return (*this);
 }

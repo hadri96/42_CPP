@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmorand <hmorand@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/03 12:02:37 by hmorand           #+#    #+#             */
-/*   Updated: 2024/09/03 12:02:54 by hmorand          ###   ########.ch       */
+/*   Created: 2024/10/04 15:25:54 by hmorand           #+#    #+#             */
+/*   Updated: 2024/10/04 15:25:54 by hmorand          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 class Point
 {
 	private:
-		Fixed	x,y;
+		const Fixed	x,y;
 	public:
 		Point();
 		Point(const Fixed x_0, const Fixed y_0);
@@ -28,8 +28,6 @@ class Point
 
 		const Fixed	getX(void) const;
 		const Fixed	getY(void) const;
-		void		setX(Fixed value);
-		void		setY(Fixed value);
 };
 
 bool	bsp(Point const a, Point const b, Point const c, Point const point);
